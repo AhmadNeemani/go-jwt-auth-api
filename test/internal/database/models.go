@@ -18,10 +18,16 @@ type RefreshToken struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
+type Role struct {
+	Name          string `json:"name"`
+	HierarchyLevel int32  `json:"hierarchy_level"`
+}
+
 type User struct {
 	ID           uuid.UUID `json:"id"`
 	CreatedAt    time.Time `json:"created_at"`
 	UpdatedAt    time.Time `json:"updated_at"`
 	Name         string    `json:"name"`
 	PasswordHash string    `json:"password_hash"`
+	RoleName     string    `json:"role_name"` // Added role_name
 }
